@@ -1,0 +1,14 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "files": ["./server.ts", "./types/User.d.ts"],
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "rootDir": "./"
+  }
+}
