@@ -9,12 +9,17 @@ function isUserValid(userData: User) {
 }
 
 export async function createNewUser(user: User) {
-  if (isUserValid(user)) {
-    const id = await createUser(user);
-    return id;
+  if (!isUserValid(user)) {
+    console.error(user, "NOT VALID!");
+    throw new Error("user not valid");
   }
+  const existingUser = await fetchUserByName(user.name);
 
-  throw new Error("user not valid");
+  if (existingUser) {
+    throw new Error("user exists");
+  }
+  const id = await createUser(user);
+  return id;
 }
 
 export async function getUserByName(name: string) {

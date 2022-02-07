@@ -28,9 +28,9 @@ export async function redisConnectionMiddleware(
 ) {
   await connect();
 
-  res.on("finish", async function () {
-    await disconnect();
-  });
+  // res.on("finish", async function () {
+  //   await disconnect();
+  // });
 
   next();
 }

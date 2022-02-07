@@ -15,7 +15,10 @@ export async function createUser(data: User) {
 export async function fetchUserByName(name: string) {
   const repository = new Repository(userSchema, client);
 
-  // @ts-ignore
-  const user = await repository.search(name).returnFirst();
+  const user = await repository
+    .search()
+    .where("name")
+    .matches(name)
+    .returnFirst();
   return user;
 }
