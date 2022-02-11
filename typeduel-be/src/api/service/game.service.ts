@@ -15,7 +15,9 @@ export async function createGame(data: Game) {
 export async function getGames() {
   const repository = new Repository(gameSchema, client);
 
-  const games = await repository.search().all({ pageSize: 10 });
-  console.log(games);
+  const games = await (
+    await repository.search().all({ pageSize: 3 })
+  ).sort((a, b) => (a.entityId > b.entityId ? -1 : 1));
+
   return games;
 }

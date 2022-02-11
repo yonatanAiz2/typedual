@@ -9,7 +9,7 @@ import {
 import { Socket, Server } from "socket.io";
 
 @SocketController()
-class MainSocketController {
+class MainSocket {
   @OnConnect()
   public onConnection(
     @ConnectedSocket() socket: Socket,
@@ -17,11 +17,6 @@ class MainSocketController {
   ) {
     console.log("NEW connected ", socket.id);
   }
-
-  @OnMessage("message")
-  message(@SocketIO() io, @ConnectedSocket() Socket, @MessageBody() message) {
-    io.emit("message-from-server", message);
-  }
 }
 
-export default MainSocketController;
+export default MainSocket;

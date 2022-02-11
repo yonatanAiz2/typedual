@@ -27,7 +27,7 @@ const AuthContextProvider: React.FC = ({ children }) => {
     const response = await fetch(`http://localhost:4000/users/${name}`);
     const { user }: { user: User } = await response.json();
     setUser(user);
-    localStorage.setItem("user", JSON.stringify(user));
+    // localStorage.setItem("user", JSON.stringify(user));
   };
 
   const login = async (name: string) => {
@@ -45,7 +45,7 @@ const AuthContextProvider: React.FC = ({ children }) => {
 
       if (!error) {
         setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
+        // localStorage.setItem("user", JSON.stringify(user));
       } else {
         if (error === "user exists") {
           fetchUser(name);

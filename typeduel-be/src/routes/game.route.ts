@@ -9,7 +9,10 @@ gameRouter.route("/game").get(async function (_, res) {
   try {
     const games = await getAllGames();
     return res.json({ games });
-  } catch (e) {}
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ error: e.message });
+  }
 });
 
 gameRouter

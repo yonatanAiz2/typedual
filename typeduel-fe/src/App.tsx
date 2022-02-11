@@ -6,7 +6,7 @@ const reactLocation = new ReactLocation();
 
 const routes: Route[] = [
   { path: "/", element: <Main /> },
-  { path: "/dual", element: <Dual /> },
+  { path: "/dual/:enemy", element: <Dual /> },
 ];
 
 function App() {
