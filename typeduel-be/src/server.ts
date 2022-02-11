@@ -8,7 +8,7 @@ import "reflect-metadata";
 import app from "./app";
 var debug = require("debug")("socketio-server:server");
 import * as http from "http";
-import { initSocket } from "./config/socket";
+import { initSocket } from "./socket";
 
 /**
  * Get port from environment and store in Express.

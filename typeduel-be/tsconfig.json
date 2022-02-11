@@ -5,7 +5,8 @@
   "files": [
     "./src/server.ts",
     "./src/types/User.d.ts",
-    "./src/types/Game.d.ts"
+    "./src/types/Game.d.ts",
+    "./src/api/controllers/MainSocketController.ts"
   ],
   "compilerOptions": {
     "target": "es6",
@@ -15,7 +16,6 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "rootDir": "./"
+    "emitDecoratorMetadata": true
   }
 }
