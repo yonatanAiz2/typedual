@@ -1,19 +1,22 @@
 import express from "express";
 import { redisConnectionMiddleware } from "../config/redis";
-import { createNewUser, getUserByName } from "../controllers/users";
-export const router = express.Router();
+import {
+  createNewUser,
+  getUserByName,
+} from "../api/controllers/users.contoller";
+export const usersRouter = express.Router();
 
-router.use(redisConnectionMiddleware);
+usersRouter.use(redisConnectionMiddleware);
 
-router
+usersRouter
   .route("/users")
   .get(function (_, res) {
     return res.send("USERS");
   })
   .post(async function (req, res) {
     try {
-      const userId = await createNewUser(req.body);
-      return res.status(201).json({ user: { ...req.body, id: userId } });
+      const user = await createNewUser(req.body);
+      return res.status(201).json({ user });
     } catch (e: any) {
       console.error(e);
 
@@ -21,7 +24,7 @@ router
     }
   });
 
-router.route("/users/:name").get(async (req, res) => {
+usersRouter.route("/users/:name").get(async (req, res) => {
   try {
     const user = await getUserByName(req.params.name);
     if (user) {

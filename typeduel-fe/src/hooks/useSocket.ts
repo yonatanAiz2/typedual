@@ -5,7 +5,7 @@ export const useSocket = () => {
   const [socket, setSocket] = useState<Socket>();
 
   useEffect(() => {
-    const ioSocket = ioClient("http://localhost:4000", { extraHeaders: {} });
+    const ioSocket = ioClient("http://localhost:4000");
     ioSocket.on("connect", () => {
       setSocket(ioSocket);
     });

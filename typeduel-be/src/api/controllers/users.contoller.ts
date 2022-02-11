@@ -1,4 +1,4 @@
-import { createUser, fetchUserByName } from "../service/users";
+import { createUser, fetchUserByName } from "../service/users.service";
 
 function isUserValid(userData: User) {
   if (!userData.name) {

@@ -2,13 +2,20 @@
   "ts-node": {
     "files": true
   },
-  "files": ["./server.ts", "./types/User.d.ts"],
+  "files": [
+    "./src/server.ts",
+    "./src/types/User.d.ts",
+    "./src/types/Game.d.ts"
+  ],
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "rootDir": "./"
   }
 }
