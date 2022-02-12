@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLetters } from "../../../hooks/useLetters";
 import { useSocket } from "../../../hooks/useSocket";
 
-export const useMainDual = (enemy: string, challenger: string) => {
+export const useMainDual = (enemy: string, challenger?: string) => {
   const { letters } = useLetters();
 
   const socket = useSocket();

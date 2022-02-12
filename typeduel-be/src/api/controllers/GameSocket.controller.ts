@@ -1,11 +1,9 @@
 import {
   ConnectedSocket,
   MessageBody,
-  OnConnect,
   OnMessage,
   SocketController,
   SocketIO,
-  SocketQueryParam,
 } from "socket-controllers";
 import { Socket, Server } from "socket.io";
 
